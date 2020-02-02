@@ -1,7 +1,12 @@
 import sqlite3
-from random import choice
 
-questions = ["Question 1", "Question 2", "Question 3"]
-Answers = ["Answer 1", "Answer 2", "Answer 3"]
+questions = []
+Answers = []
 
-print(choice(questions))
+conn = sqlite3.connect('Quiz.db')
+c = conn.cursor()
+
+for row in c.execute('SELECT Question FROM comp_quiz'):
+    questions.append(row)
+
+print(questions[0])
