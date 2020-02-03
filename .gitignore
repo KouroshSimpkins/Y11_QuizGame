@@ -483,3 +483,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Personal test file
+test.py
